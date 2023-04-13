@@ -11,6 +11,10 @@ namespace Day15_Day16_ReflationPracticeProblem
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Day 15 and Day 16 Practice Problem");
+            Console.WriteLine("Please Enter Digit ");
+            int givenNumber = Convert.ToInt32(Console.ReadLine());
+            int closestNumber = ClosestNumber.FindClosestEvenNumber(givenNumber);
+            Console.WriteLine("Closest Even number with all even digit is "+closestNumber);
 
         }
     }

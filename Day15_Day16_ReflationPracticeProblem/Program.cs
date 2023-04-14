@@ -17,6 +17,14 @@ namespace Day15_Day16_ReflationPracticeProblem
             int closestNumber = ClosestNumber.FindClosestEvenNumber(givenNumber);
             Console.WriteLine("Closest Even number with all even digit is "+closestNumber);
 
+            //Reflaction
+            Type type = typeof(ClosestNumber);
+            MemberInfo[] members = type.GetMembers();
+
+            foreach (MemberInfo member in members)
+            {
+                Console.WriteLine(member);
+            }
         }
     }
 }

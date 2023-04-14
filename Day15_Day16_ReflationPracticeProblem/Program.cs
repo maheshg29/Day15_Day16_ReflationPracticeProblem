@@ -18,6 +18,7 @@ namespace Day15_Day16_ReflationPracticeProblem
             Console.WriteLine("Closest Even number with all even digit is "+closestNumber);
 
             //Reflaction
+            Console.WriteLine("======******======\nClass Member Data");
             Type type = typeof(ClosestNumber);
             MemberInfo[] members = type.GetMembers();
 
@@ -25,6 +26,11 @@ namespace Day15_Day16_ReflationPracticeProblem
             {
                 Console.WriteLine(member);
             }
+
+            //Create empty object
+            Console.WriteLine("======******======\nCreate empty object");
+            object obj = Activator.CreateInstance(type);
+            Console.WriteLine(obj.GetType().Name);
         }
     }
 }

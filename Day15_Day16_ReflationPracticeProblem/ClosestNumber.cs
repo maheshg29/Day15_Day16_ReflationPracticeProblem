@@ -8,6 +8,10 @@ namespace Day15_Day16_ReflationPracticeProblem
 {
     public class ClosestNumber
     {
+        public ClosestNumber()
+        {
+            Console.WriteLine("Default Constructor Invoke");
+        }
         public static int FindClosestEvenNumber(int givenNumber)
         {
             if (givenNumber > 0)

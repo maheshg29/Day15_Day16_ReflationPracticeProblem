@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Day15_Day16_ReflationPracticeProblem
 {
@@ -12,25 +8,52 @@ namespace Day15_Day16_ReflationPracticeProblem
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Day 15 and Day 16 Practice Problem");
-            Console.WriteLine("Please Enter Digit ");
-            int givenNumber = Convert.ToInt32(Console.ReadLine());
-            int closestNumber = ClosestNumber.FindClosestEvenNumber(givenNumber);
-            Console.WriteLine("Closest Even number with all even digit is "+closestNumber);
-
-            //Reflaction
-            Console.WriteLine("======******======\nClass Member Data");
-            Type type = typeof(ClosestNumber);
-            MemberInfo[] members = type.GetMembers();
-
-            foreach (MemberInfo member in members)
+            Console.WriteLine("Select correcct option for\n" +
+                "1. To find Closest Even number with all even digit\n" +
+                "2. Fetch all class members (like methods, constructors,properties) using reflection.\n" +
+                "3. Create empty object (default constructor) of above class using reflection.\n" +
+                "4. Create parameterized object using reflection.");
+            int option = Convert.ToInt32(Console.ReadLine());
+            switch (option)
             {
-                Console.WriteLine(member);
-            }
+                case 1:
+                    Console.WriteLine("Please Enter Digit ");
+                    int givenNumber = Convert.ToInt32(Console.ReadLine());
+                    int closestNumber = ClosestNumber.FindClosestEvenNumber(givenNumber);
+                    Console.WriteLine("Closest Even number with all even digit is " + closestNumber);
+                    break;
 
-            //Create empty object
-            Console.WriteLine("======******======\nCreate empty object");
-            object obj = Activator.CreateInstance(type);
-            Console.WriteLine(obj.GetType().Name);
+                case 2:
+                    //Reflaction
+                    Console.WriteLine("======******======\nClass Member Data");
+                    Type type = typeof(ClosestNumber);
+                    MemberInfo[] members = type.GetMembers();
+
+                    foreach (MemberInfo member in members)
+                    {
+                        Console.WriteLine(member);
+                    }
+                    break;
+
+                case 3:
+                    //Create empty object
+                    Console.WriteLine("======******======\nCreate empty object");
+                    Type type1 = typeof(ClosestNumber);
+                    object obj = Activator.CreateInstance(type1);
+                    Console.WriteLine(obj.GetType().Name);
+                    break;
+
+                case 4:
+                    //Create parameterized object
+                    Type type2 = typeof(ClosestNumber);
+                    object argument = "This is Mahesh's Code";
+                    object parameterizedObj = Activator.CreateInstance(type2, argument);
+                    break;
+
+                default:
+                    Console.WriteLine("Select Correct Option for operation");
+                    break;
+            }
         }
     }
 }

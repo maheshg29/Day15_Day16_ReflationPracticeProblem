@@ -8,10 +8,19 @@ namespace Day15_Day16_ReflationPracticeProblem
 {
     public class ClosestNumber
     {
+        public string Name { get; set; }
         public ClosestNumber()
         {
             Console.WriteLine("Default Constructor Invoke");
         }
+
+        public ClosestNumber(string name)
+        {
+            Name = name;
+            Console.WriteLine("In parameterized Constructor and given Parameter is " + Name);
+        }
+
+
         public static int FindClosestEvenNumber(int givenNumber)
         {
             if (givenNumber > 0)

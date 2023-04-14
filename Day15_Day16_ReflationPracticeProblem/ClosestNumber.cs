@@ -87,5 +87,10 @@ namespace Day15_Day16_ReflationPracticeProblem
             int[] arry = number.ToString().ToCharArray().Select(x => (int)Char.GetNumericValue(x)).ToArray();
             return arry;            
         }
+
+        public void SampleMethod()
+        {
+            Console.WriteLine("This is Sample Method Invoke through Reflaction");
+        }
     }
 }
